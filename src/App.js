@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
+import Header from "./componet/header";
+import Footer from "./componet/footer";
+import Home from "./pages/home";
+import HowToHire from "./pages/how-to-hire";
+import Layout from "./Layout";
+import HowToFindWork from "./pages/how-to-find-work";
+
+
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+  
+    <BrowserRouter>
+      <Routes>
+          <Route path="/" element={<>  <Header /> <Home /></>} />
+          <Route path="/" element={<Layout />}>
+          <Route path="why-skillzena/how-to-hire" element={<HowToHire />} />
+          <Route path="why-skillzena/how-to-find-work" element={<HowToFindWork />} />
+
+          {/* <Route path="/blogs" element={<Blogs />} /> */}
+          </Route>
+       
+      </Routes>
+    </BrowserRouter>
+    <Footer />
+    </>
   );
 }
 
