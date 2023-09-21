@@ -232,6 +232,10 @@ const Header = () => {
             </li>
             <li>
               {" "}
+              <Link to="/services">Services</Link>{" "}
+            </li>
+            <li>
+              {" "}
               <a href="">Categories</a>{" "}
             </li>
 
